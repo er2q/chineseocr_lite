@@ -1,8 +1,8 @@
 import onnxruntime as rt
-import  numpy as np
+import numpy as np
 import time
 import cv2
-from .decode import  SegDetectorRepresenter
+from .decode import SegDetectorRepresenter
 
 mean = (0.485, 0.456, 0.406)
 std = (0.229, 0.224, 0.225)
@@ -64,8 +64,6 @@ class DBNET(metaclass=SingletonType):
             tar_h = tar_h - tar_h % 32
             tar_h = max(32, tar_h)
             scale_h = tar_h / h
-        
-
 
         img = cv2.resize(img, None, fx=scale_w, fy=scale_h)
 
